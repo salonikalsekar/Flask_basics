@@ -2,11 +2,11 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-
-@app.route('/')
-
-def index():
-    return "hello"
+#
+# @app.route('/')
+#
+# def index():
+#     return "hello"
 
 @app.route('/hello/<user>')
 def profile(user):
@@ -24,9 +24,12 @@ def req():
         return "post"
 
 # templates
+@app.route('/')
 @app.route('/profile/<name>')
-def getprofile(name):
+def getprofile(name=None):
     return render_template('profile.html', name=name)
+
+
 
 
 
