@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -22,6 +22,12 @@ def req():
         return "method used get"
     else:
         return "post"
+
+# templates
+@app.route('/profile/<name>')
+def getprofile(name):
+    return render_template('profile.html', name=name)
+
 
 
 if __name__ == '__main__':
