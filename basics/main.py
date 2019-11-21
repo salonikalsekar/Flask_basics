@@ -30,7 +30,10 @@ def getprofile(name=None):
     return render_template('profile.html', name=name)
 
 
-
+@app.route('/shopping')
+def shoplist():
+    shop = ["tuna", "ketchup"]
+    return render_template('shopping.html', food=shop, s = "s")
 
 
 if __name__ == '__main__':
